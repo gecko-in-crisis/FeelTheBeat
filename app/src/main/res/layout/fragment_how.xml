@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HowFragment"
+    android:background="#e9cece">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:background="#bdaeae"
+                android:gravity="top|center"
+                android:text="Click on the pads \nto start playing"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:background="#a59595"
+                android:gravity="top|center"
+                android:text="Click on\nthe buttons\nto change the pictures"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:background="#a59589"
+                android:gravity="top|center"
+                android:text="Click on the 3 dots \nto move between screens"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:backgroundTint="#4c4632"
+                android:textSize="25sp"
+                android:layout_gravity="center"
+                android:id="@+id/closeBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:onClick="closeFrag"
+                android:text="Close" />
+        </LinearLayout>
+    </ScrollView>
+
+
+</FrameLayout>

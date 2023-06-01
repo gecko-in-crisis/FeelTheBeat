@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#6e669c"
+    android:gravity="top|center"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".Piano"
+    android:orientation="vertical"
+    android:id="@+id/howFragmentP">
+
+    <TextView
+        android:textColor="@color/black"
+        android:id="@+id/tv"
+        android:layout_gravity="right|top"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|top"
+        android:layout_margin="20dp"
+        android:text=""
+        android:textSize="24sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center|top">
+
+            <Button
+                android:id="@+id/c"
+                style="@style/firstwhitekey"
+                android:gravity="center|bottom"
+                android:onClick="playC"
+                android:text="    C"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/d"
+                style="@style/whitekey"
+                android:layout_toRightOf="@+id/c"
+                android:gravity="center|bottom"
+                android:onClick="playD"
+                android:text="    D"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/e"
+                style="@style/whitekey"
+                android:layout_toRightOf="@+id/d"
+                android:gravity="center|bottom"
+                android:onClick="playE"
+                android:text="    E"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/f"
+                style="@style/whitekey"
+                android:layout_toRightOf="@+id/e"
+                android:gravity="center|bottom"
+                android:onClick="playF"
+                android:text="    F"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/g"
+                style="@style/whitekey"
+                android:layout_toRightOf="@+id/f"
+                android:gravity="center|bottom"
+                android:onClick="playG"
+                android:text="    G"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/a"
+                style="@style/whitekey"
+                android:layout_toRightOf="@+id/g"
+                android:gravity="center|bottom"
+                android:onClick="playA"
+                android:text="    A"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/b"
+                style="@style/whitekey"
+                android:layout_toRightOf="@+id/a"
+                android:gravity="center|bottom"
+                android:onClick="playB"
+                android:text="    B"
+                android:textColor="@color/black" />
+
+
+            <Button
+                android:id="@+id/cs"
+                style="@style/blackkey"
+                android:layout_toRightOf="@id/c"
+                android:gravity="center|bottom"
+                android:onClick="playCS"
+                android:text="    C#"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/ds"
+                style="@style/blackkey"
+                android:layout_toRightOf="@id/d"
+                android:gravity="center|bottom"
+                android:onClick="playDS"
+                android:text="    D#"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/fs"
+                style="@style/blackkey"
+                android:layout_toRightOf="@id/f"
+                android:gravity="center|bottom"
+                android:onClick="playFS"
+                android:text="    F#"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/gs"
+                style="@style/blackkey"
+                android:layout_toRightOf="@id/g"
+                android:gravity="center|bottom"
+                android:onClick="playGS"
+                android:text="    G#"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/as"
+                style="@style/blackkey"
+                android:layout_toRightOf="@id/a"
+                android:gravity="center|bottom"
+                android:onClick="playAS"
+                android:text="    A#"
+                android:textColor="@color/white" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Switch
+            android:id="@+id/switch2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_weight="1"
+            android:text="Play C Major scale"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvPlay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="18dp"
+            android:text="Move your phone upwards to play an ascending musical scale\nMove your phone downwards to play a descending scale"
+            android:visibility="invisible"/>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

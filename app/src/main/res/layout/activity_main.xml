@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:background="#d2d9e9"
+    android:id="@+id/mainActivity">
+
+
+    <TextView
+        android:textColor="@color/black"
+        android:id="@+id/tv"
+        android:layout_gravity="right|top"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="20sp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="5dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:textColor="@color/white"
+            android:textSize="32sp"
+            android:text="Welcome to \n FeelTheBeat"/>
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="118dp"
+            android:src="@drawable/music"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:text="GET READY TO PLAY MUSIC AND HAVE FUN"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:background="#f2f6c3"/>
+
+    <Button
+        android:backgroundTint="#d066"
+        android:layout_marginTop="40dp"
+        android:id="@+id/btnReg"
+        android:layout_gravity="center"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:text="CLICK HERE TO REGISTER"
+        android:onClick="openReg"/>
+
+    <Button
+        android:backgroundTint="#30675b"
+        android:layout_marginTop="20dp"
+        android:id="@+id/btnLog"
+        android:layout_gravity="center"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:text="ALREADY HAVE AN ACCOUNT?"
+        android:onClick="openPageLog"/>
+
+    <Button
+        android:backgroundTint="#d066"
+        android:layout_marginTop="20dp"
+        android:id="@+id/btnLearn"
+        android:layout_gravity="center"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:text="CLICK HERE TO read about the app"
+        android:onClick="openLearn"/>
+
+</LinearLayout>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AboutApp"
+    android:background="#d996f8">
+
+    <TextView
+        android:textColor="@color/black"
+        android:id="@+id/tv"
+        android:layout_gravity="right|top"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="20sp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:background="#f5a9b8"
+                android:gravity="center"
+                android:text="What is this app?"
+                android:textSize="35sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_marginRight="10dp"
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:text="ברוכים הבאים לFeelTheBeat \n \nבאפליקציה הזו תוכלו למצוא פסנתר שאפשר לנגן בו ותופים שעשויים ממערכת פדים, שאת רקע הפדים אתם מצלמים בעצמכם! \על מנת שתוכלו להתחיל לנגן עליכם להתחבר למשחק. \nאם אינכם רשומים, עליכם להירשם. \n \n
+לאחר שתרשמו או תתחברו, ייפתח דף הבית  ומשם תתחילו את המסע בעולם המוזיקה!"
+                android:textSize="26sp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="#81d7f7"
+                android:onClick="goMain"
+                android:text="Back"
+                android:textSize="20sp"/>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

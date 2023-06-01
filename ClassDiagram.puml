@@ -1,0 +1,224 @@
+@startuml
+class com.example.feelthebeat.Home {
+~ String name
+~ MyReceiver myReceiver
+~ IntentFilter filter
+~ TextView tv
+# void onCreate(Bundle)
++ void openDrums(View)
++ void openPiano(View)
+}
+class com.example.feelthebeat.MyService {
+~ MediaPlayer player
+~ int audio
++ <<Create>> MyService()
++ int onStartCommand(Intent,int,int)
++ void onDestroy()
++ IBinder onBind(Intent)
+}
+class com.example.feelthebeat.AboutApp {
+~ Intent service
+~ MyReceiver myReceiver
+~ IntentFilter filter
+~ TextView tv
+# void onCreate(Bundle)
++ void goMain(View)
+}
+class com.example.feelthebeat.HowFragmentPiano {
+~ Button closeBtn
++ <<Create>> HowFragmentPiano()
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
+}
+class com.example.feelthebeat.MainActivity {
+~ TextView tvBattery
+~ IntentFilter intentBatteryFilter
+~ MyReceiver myReceiver
+~ Intent go
+# void onCreate(Bundle)
++ void openReg(View)
++ void openPageLog(View)
++ void openLearn(View)
+}
+class com.example.feelthebeat.HowFragment {
+~ Button closeBtn
++ <<Create>> HowFragment()
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
+}
+class com.example.feelthebeat.Login {
+~ TextInputLayout etLogName
+~ String name
+~ HelperDB hlp
+~ SQLiteDatabase db
+~ MyReceiver myReceiver
+~ IntentFilter filter
+~ TextView tv
+~ Intent service
+# void onCreate(Bundle)
++ boolean onCreateOptionsMenu(Menu)
++ boolean onOptionsItemSelected(MenuItem)
++ void registration(View)
++ void Login(View)
++ void find()
+}
+class com.example.feelthebeat.Info {
+- Bitmap image1
+- String name
+- long id
++ <<Create>> Info(Bitmap,Bitmap,Bitmap,String,String)
++ Bitmap getImage1()
++ void setImage1(Bitmap)
++ Bitmap getImage2()
++ void setImage2(Bitmap)
++ Bitmap getImage3()
++ void setImage3(Bitmap)
++ void setPass(String)
++ String getName()
++ void setName(String)
++ String getPass()
++ long getId()
++ void setId(long)
++ String toString()
+}
+class com.example.feelthebeat.MyReceiver {
+~ TextView tv
+~ <<Create>> MyReceiver(TextView)
++ void onReceive(Context,Intent)
+}
+class com.example.feelthebeat.Piano {
+~ TextView tvBattery
+~ IntentFilter intentBatteryFilter
+~ MyReceiver myReceiver
+- SoundPool soundPool
+- int[] mSoundIds
+- int csound
+- float LEFT_VOL
+- int PRIORITY
+~ Accelerometer accelerometer
+~ Handler handler
+~ Switch aSwitch
+~ boolean isPlaying
+~ String name
+# void onCreate(Bundle)
++ void onCheckedChanged(CompoundButton,boolean)
+- void playSoundsForward()
+- void playSoundsBackward()
+# void onResume()
+# void onPause()
++ boolean onCreateOptionsMenu(Menu)
++ boolean onOptionsItemSelected(MenuItem)
++ void playC(View)
++ void playD(View)
++ void playE(View)
++ void playF(View)
++ void playG(View)
++ void playA(View)
++ void playB(View)
++ void playCS(View)
++ void playDS(View)
++ void playFS(View)
++ void playGS(View)
++ void playAS(View)
+}
+class com.example.feelthebeat.Register {
+~ TextInputLayout name
+~ String save_name
+~ HelperDB hlp
+~ SQLiteDatabase db
+~ int pictureCount
+~ Bitmap[] imageBitmaps
+~ ImageView[] imageViews
+~ MyReceiver myReceiver
+~ IntentFilter filter
+~ TextView tv
+~ Intent go
+- {static} int REQUEST_IMAGE_CAPTURE
+# void onCreate(Bundle)
++ void btnTakePhoto_1(View)
++ void btnTakePhoto_2(View)
++ void btnTakePhoto_3(View)
+- void takePhoto(int)
+# void onActivityResult(int,int,Intent)
++ void submit(View)
+- boolean validatePassword()
+- boolean validateUsername()
+- boolean checkIfUserNameExists(String)
+- void insertUserToSQLite()
++ boolean onCreateOptionsMenu(Menu)
++ boolean onOptionsItemSelected(MenuItem)
++ void goLog(View)
+}
+class com.example.feelthebeat.HelperDB {
++ {static} String DB_NAME
++ {static} String TABLE_NAME
++ {static} String NAME
++ {static} String PASS
++ {static} String PICTURE_1
++ {static} String PICTURE_2
++ {static} String PICTURE_3
+- SQLiteDatabase database
+~ long id
++ <<Create>> HelperDB(Context)
++ void onCreate(SQLiteDatabase)
++ void onUpgrade(SQLiteDatabase,int,int)
++ Info insert(Info)
+- byte[] getBytes(Bitmap)
+}
+class com.example.feelthebeat.Drums {
+- SoundPool sp
+- int sound1
+~ HelperDB hlp
+~ SQLiteDatabase db
+~ String name
+~ ImageButton b1
+~ int selectedImageButtonId
+~ TextView tv
+~ MyReceiver myReceiver
+~ IntentFilter filter
+- {static} int REQUEST_IMAGE_CAPTURE
+# void onCreate(Bundle)
++ boolean onCreateOptionsMenu(Menu)
++ boolean onOptionsItemSelected(MenuItem)
+- Bitmap getImage(byte[])
++ void playSound1(View)
++ void playSound2(View)
++ void playSound3(View)
++ void playSound4(View)
++ void playSound5(View)
++ void playSound6(View)
++ void playSound7(View)
++ void playSound8(View)
++ void playSound9(View)
++ void changePic(View)
+- byte[] getBytes(Bitmap)
+# void onActivityResult(int,int,Intent)
+}
+class com.example.feelthebeat.Accelerometer {
+- Listener listener
+- SensorManager sensorManager
+- Sensor sensor
+- SensorEventListener sensorEventListener
+~ <<Create>> Accelerometer(Context)
++ void setListener(Listener)
++ void register()
++ void unregister()
+}
+interface com.example.feelthebeat.Accelerometer$Listener {
+~ void onTranslation(float,float,float)
+}
+
+
+androidx.appcompat.app.AppCompatActivity <|-- com.example.feelthebeat.Home
+android.app.Service <|-- com.example.feelthebeat.MyService
+androidx.appcompat.app.AppCompatActivity <|-- com.example.feelthebeat.AboutApp
+androidx.fragment.app.Fragment <|-- com.example.feelthebeat.HowFragmentPiano
+androidx.appcompat.app.AppCompatActivity <|-- com.example.feelthebeat.MainActivity
+androidx.fragment.app.Fragment <|-- com.example.feelthebeat.HowFragment
+androidx.appcompat.app.AppCompatActivity <|-- com.example.feelthebeat.Login
+android.content.BroadcastReceiver <|-- com.example.feelthebeat.MyReceiver
+com.example.feelthebeat.OnCheckedChangeListener <|.. com.example.feelthebeat.Piano
+androidx.appcompat.app.AppCompatActivity <|-- com.example.feelthebeat.Piano
+androidx.appcompat.app.AppCompatActivity <|-- com.example.feelthebeat.Register
+android.database.sqlite.SQLiteOpenHelper <|-- com.example.feelthebeat.HelperDB
+androidx.appcompat.app.AppCompatActivity <|-- com.example.feelthebeat.Drums
+com.example.feelthebeat.Accelerometer +.. com.example.feelthebeat.Accelerometer$Listener
+@enduml

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Home"
+    android:background="#b8dbd3">
+
+    <TextView
+        android:textColor="@color/black"
+        android:id="@+id/tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|top"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:text=""
+        android:textSize="20sp" />
+
+    <TextView
+        android:background="#f7e7b4"
+        android:id="@+id/tvName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_gravity="center|top"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:text=""
+        android:textSize="30sp" />
+
+    <TextView
+        android:background="#f2f6c3"
+        android:id="@+id/tvWhat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:text="What would you \nlike to do?"
+        android:textSize="34sp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="100dp">
+            <ImageView
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="80dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/drums"/>
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/piano"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="10dp">
+
+            <Button
+                android:layout_marginLeft="30dp"
+                android:id="@+id/drums"
+                android:backgroundTint="#5a5255"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:onClick="openDrums"
+                android:text="Drums"
+                android:layout_marginRight="80dp"/>
+
+            <Button
+                android:backgroundTint="#5a5255"
+                android:id="@+id/piano"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:onClick="openPiano"
+                android:text="Piano" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
